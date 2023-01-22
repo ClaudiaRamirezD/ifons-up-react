@@ -1,0 +1,50 @@
+
+
+  
+
+.logo1{
+  width: 8rem;
+}
+
+.btn-outline-success{
+  color: rgb(121, 0, 255);
+  border-color: rgb(121, 0, 255);
+}
+
+#navbarSupportedContent{
+  font-size: 1.4rem;
+  
+}
+
+.navbar{
+background-color: black;
+
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show>.nav-link {
+  color: rgb(121, 0, 255);
+      
+}
+
+.fa-shopping-cart{
+  font-size: 1.7rem;
+  color: rgb(121, 0, 255);
+  padding-left: 1.7rem;
+  position: relative;
+
+}
+
+.fa-badge{
+  font-size: 1.7rem;
+  display: block;
+}
+
+.navbar-collapse{
+  flex-grow: 0;
+}
+
+.container-fluid{
+  width: 95%;
+}
+
