@@ -6,7 +6,7 @@ const Navbar = () => {
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img className="logo1" src="src/assets/images/cortado.png" />
+            <img className="logo1" src="fonesbbb/src/assets/images/cortado.png" />
           </a>
           <button
             class="navbar-toggler"
