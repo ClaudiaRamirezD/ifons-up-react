@@ -3,10 +3,10 @@ import CartWidget from "../CartWidget/CartWidget";
 const Navbar = () => {
   return (
     <>
-      <nav class="navbar navbar-expand-lg bg-dark">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img className="logo1" src="src/assets/images/thumbs-removebg-preview.png" />
+            <img className="logo1" src="src/assets/images/cortado.png" />
           </a>
           <button
             class="navbar-toggler"
