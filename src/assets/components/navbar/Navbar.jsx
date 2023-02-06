@@ -1,44 +1,65 @@
 import CartWidget from "../CartWidget/CartWidget";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import Logo from '@/assets/images/cortado.png';
+import { useState } from "react";
+import './navbar.css';
 
 const Navbar = () => {
+
+  const [navClass, setNavClass] = useState(
+    "hidden font-bold md:static  md:flex md:h-auto md:flex-row md:gap-4 md:p-0"
+  );
+   
+  const handleOpenMenu = () => {
+    setNavClass(
+      "absolute top-0 left-0 flex h-full flex-col gap-y-8  md:bg-transparent p-8 font-bold md:flex md:flex-row md:gap-8 md:static bg-purple-300"
+    );
+  };
+  
+  const handleCloseMenu = () => {
+    setNavClass(
+      "hidden font-bold md:static  md:flex  md:h-auto  md:gap-4 md:p-0 "
+    );
+  };
+
+
   return (
     <>
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img className="logo1" src="../src/assets/images/cortado.png"/>
+      <nav>
+        <div className="container flex items-center bg-black px-4 text-blue-500  md:justify-between">
+          <a href="#" className="mr-auto md:mr-0">
+            <img src={Logo} alt="Logo ifons-up" className="mt-3 mb-3 w-28" />
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
+          <button className="pr-8 md:hidden" onClick={handleOpenMenu}>
+            <AiOutlineMenu className="open" />
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Celulares
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Relojes
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Tablets
-                </a>
-              </li>
-            </ul>
-          </div>
-          <CartWidget></CartWidget>
+
+          <ul className={navClass}>
+            <li>
+              <button
+                className="close  mb-12 md:hidden"
+                onClick={handleCloseMenu}
+              >
+                <AiOutlineClose className="close" />
+              </button>
+            </li>
+            <li>
+              <a href="#">iPhone</a>
+            </li>
+            <li>
+              <a href="#">Samsung</a>
+            </li>
+            <li>
+              <a href="#">Huawei</a>
+            </li>
+            <li>
+              <a href="#">Motorola</a>
+            </li>
+            <li>
+              <a href="#">Otros</a>
+            </li>
+          </ul>
+          <CartWidget />
         </div>
       </nav>
     </>

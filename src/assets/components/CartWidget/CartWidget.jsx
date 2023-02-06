@@ -1,16 +1,13 @@
 
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import './cart.css'
 
 const CartWidget = () => {
   return (
-    <>
-      <div className="shopping">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="position-absolute top-40 start-120 translate-middle badge rounded-pill bg-danger">
-          5
-        </span>
-      </div>
-    </>
+    <div>
+      <AiOutlineShoppingCart className="cart mr-5"/>
+    </div>
   );
-};
+}
 
-export default CartWidget;
+export default CartWidget
