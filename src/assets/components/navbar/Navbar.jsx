@@ -12,7 +12,7 @@ const Navbar = () => {
    
   const handleOpenMenu = () => {
     setNavClass(
-      "absolute top-0 left-0 flex h-full flex-col gap-y-8  md:bg-transparent p-8 font-bold md:flex md:flex-row md:gap-8 md:static bg-purple-300"
+      "absolute top-28 left-0 sm:mt-16 flex h-full flex-col gap-y-8  md:bg-transparent z-10 p-12 pt-12 font-bold md:flex md:flex-row md:gap-8 md:static"
     );
   };
   
@@ -26,9 +26,13 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div className="container flex items-center bg-black px-4 text-blue-500  md:justify-between">
+        <div className="flex items-center bg-black px-4 text-blue-500  md:justify-between">
           <a href="#" className="mr-auto md:mr-0">
-            <img src={Logo} alt="Logo ifons-up" className="mt-3 mb-3 w-28" />
+            <img
+              src={Logo}
+              alt="Logo ifons-up"
+              className="mt-3 mb-3 w-28  "
+            />
           </a>
           <button className="pr-8 md:hidden" onClick={handleOpenMenu}>
             <AiOutlineMenu className="open" />
@@ -37,7 +41,7 @@ const Navbar = () => {
           <ul className={navClass}>
             <li>
               <button
-                className="close  mb-12 md:hidden"
+                className="close md:hidden"
                 onClick={handleCloseMenu}
               >
                 <AiOutlineClose className="close" />

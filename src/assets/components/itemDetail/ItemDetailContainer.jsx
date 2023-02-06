@@ -2,7 +2,9 @@ import React from 'react'
 
 const ItemDetailContainer = () => {
   return (
-    <div>ItemDetailContainer</div>
+    <div>
+      <h1>Hola desde ItemDetailContainer!!!</h1>
+    </div>
   )
 }
 
