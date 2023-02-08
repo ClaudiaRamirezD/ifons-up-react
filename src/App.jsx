@@ -1,20 +1,20 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Navbar from '@/assets/components/navbar/Navbar'
-import ItemListContainer from '@/assets/components/ItemListContainer/ItemListContainer'
-import ItemCount from '@/assets/components/itemCount/ItemCount';
+import {ItemListContainer} from '@/assets/components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from '@/assets/components/itemDetail/ItemDetailContainer'
-
-import '@/App.css'
 import CartContainer from '@/assets/components/cartContainer/CartContainer';
+import { CartContextProvider } from './context/CartContext';
+import '@/App.css'
 
 
 
-function App(props) {
+function App() {
     return (
       <BrowserRouter>
-        <Navbar/>
-        <Routes>
+        <CartContextProvider>
+            <Navbar />
+            <Routes>
               <Route
                 path="/"
                 element={
@@ -27,11 +27,14 @@ function App(props) {
                   <ItemListContainer greeting="Soy el item list container!" />
                 }
               />
-              <Route path="/detalle/:idProducto" element={<ItemDetailContainer />}/>
-              <Route path="/cart" element={<CartContainer/>} />
-              <Route path='*' element={<Navigate to='/'/>}/>
-        </Routes>
-        <ItemCount />
+              <Route
+                path="/detalle/:idProducto"
+                element={<ItemDetailContainer />}
+              />
+              <Route path="/cart" element={<CartContainer />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+        </CartContextProvider>
       </BrowserRouter>
     ); 
 }

@@ -33,4 +33,3 @@ export const ItemListContainer = ({ }) => {
 
   return loading ? <h2>Cargando...</h2> : <ItemList productos={productos} />;
 };
-export default ItemListContainer;
