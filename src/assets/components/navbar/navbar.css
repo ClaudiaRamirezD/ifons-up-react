@@ -5,3 +5,7 @@
 .open{
     font-size: 1.7rem;
 }
+
+li:hover{
+    border-bottom: 4px purple solid;
+}

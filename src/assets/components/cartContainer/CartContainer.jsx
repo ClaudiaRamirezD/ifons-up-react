@@ -2,9 +2,7 @@ import React from 'react'
 
 const CartContainer = () => {
   return (
-    <div>
-      <h1>Hola desde Cart!!!!!!</h1>
-    </div>
+    <div>Hola desde el cart</div>
   )
 }
 

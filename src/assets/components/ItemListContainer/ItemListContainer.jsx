@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { gFetch } from "../../utils/gFetch";
-import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
+import { gFetch } from "@/assets/utils/gFetch.js";
+import ItemList from "@/assets/components/ItemList/ItemList.jsx";
 
 export const ItemListContainer = ({ }) => {
   const [productos, setProductos] = useState([]);

@@ -98,7 +98,7 @@ const Navbar = () => {
               isActive ? "text-purple-700" : "text-blue-500"
             }
           >
-            <CartWidget />
+            <CartWidget/>
           </NavLink>
         </div>
       </nav>

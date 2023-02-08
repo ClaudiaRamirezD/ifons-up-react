@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-import Navbar from './assets/components/navbar/Navbar'
-import ItemListContainer from './assets/components/ItemListContainer/ItemListContainer'
-import ItemCount from './assets/components/itemCount/ItemCount';
-import ItemDetailContainer from './assets/components/itemDetail/ItemDetailContainer'
+import Navbar from '@/assets/components/navbar/Navbar'
+import ItemListContainer from '@/assets/components/ItemListContainer/ItemListContainer'
+import ItemCount from '@/assets/components/itemCount/ItemCount';
+import ItemDetailContainer from '@/assets/components/itemDetail/ItemDetailContainer'
 
-import './App.css'
-import CartContainer from './assets/components/cartContainer/CartContainer';
+import '@/App.css'
+import CartContainer from '@/assets/components/cartContainer/CartContainer';
 
 
 
@@ -28,7 +28,7 @@ function App(props) {
                 }
               />
               <Route path="/detalle/:idProducto" element={<ItemDetailContainer />}/>
-              <Route path="/cart" element={<CartContainer />} />
+              <Route path="/cart" element={<CartContainer/>} />
               <Route path='*' element={<Navigate to='/'/>}/>
         </Routes>
         <ItemCount />

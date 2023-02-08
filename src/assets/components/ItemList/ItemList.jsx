@@ -1,5 +1,5 @@
 import React from 'react'
-import Item from '../item/Item';
+import Item from '@/assets/components/item/Item.jsx';
 
 console.log("ItemList check");
 const ItemList = ({productos}) => {
