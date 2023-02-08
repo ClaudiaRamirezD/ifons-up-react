@@ -19,10 +19,10 @@ const ItemCoutn = ({ initial = 1, stock = 10, onAdd }) => {
   };
 
   return (
-    <div className="card w-50 mt-5">
-      <div className="card-body row">
+    <div className="card w-50 mt-5 text-center mx-auto">
+      <div className="row">
         <div className="col">
-          <button className="btn btn-outline-dark w-100" onClick={handleSuma}>
+          <button className="btn btn-outline-primary w-100" onClick={handleSuma}>
             {" "}
             +{" "}
           </button>
@@ -33,14 +33,14 @@ const ItemCoutn = ({ initial = 1, stock = 10, onAdd }) => {
           </center>
         </div>
         <div className="col">
-          <button className="btn btn-outline-dark w-100" onClick={handleRestar}>
+          <button className="btn btn-outline-primary w-100" onClick={handleRestar}>
             {" "}
             -{" "}
           </button>
         </div>
       </div>
       <div className="card-footer">
-        <button className="btn btn-outline-dark w-100" onClick={handleOnAdd}>
+        <button className="btn btn-outline-primary w-100" onClick={handleOnAdd}>
           Agregar al carrito
         </button>
       </div>
