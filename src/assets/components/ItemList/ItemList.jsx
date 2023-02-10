@@ -1,12 +1,12 @@
 import React from 'react'
 import Item from '@/assets/components/item/Item.jsx';
 
-console.log("ItemList check");
+
 const ItemList = ({productos}) => {
   return (
-    <>
-        <Item productos ={productos}/>
-    </>
+    
+        productos.map(producto => <Item key={producto.id} producto={producto} />)
+
   );
 }
 

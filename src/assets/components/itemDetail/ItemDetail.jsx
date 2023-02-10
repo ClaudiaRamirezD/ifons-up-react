@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCartContext } from "@/context/CartContext";
-import ItemCoutn from "@/assets/components/itemCount/ItemCount.jsx";
+import { useCartContext } from "@/context/CartContext.jsx";
+import ItemCount from "@/assets/components/itemCount/ItemCount.jsx";
 
 const Componente = () => {
   return (
@@ -30,28 +30,28 @@ const ItemDetail = ({ producto }) => {
     setCart(!cart);
   };
   return (
-    <div className="card max-w-3xl text-center mx-auto">
+    <div className="card max-w-md text-center mx-auto">
       <div className="card-header">
-        <h2 className="card-title">{producto.name}</h2>
+        <h2 className="card-title"> {producto.name} </h2>
       </div>
       <div className="card-body mx-auto">
         <img
-          src={producto.foto}
-          alt={producto.name}
+          src= {producto.foto}
+          alt= {producto.name}
           className="max-w-44 max-h-60 "
         ></img>
-        <p class="card-text">
+        <p className="card-text">
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </p>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Precio ${producto.price}mxn</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">Precio ${producto.price}mxn</li>
+          <li className="list-group-item">A second item</li>
+          <li className="list-group-item">A third item</li>
         </ul>
         <button onClick={handleCart}></button>
         {isCount ? (
-          <ItemCoutn initial={1} stock={30} onAdd={onAdd} />
+          <ItemCount initial={1} stock={30} onAdd={onAdd} />
         ) : (
           <>
             <Link className="btn btn-outline-success" to="/cart">

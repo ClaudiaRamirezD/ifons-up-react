@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { gFetch } from "@/assets/utils/gFetch.js";
 import ItemList from "@/assets/components/ItemList/ItemList.jsx";
 
-export const ItemListContainer = ({ }) => {
+export const ItemListContainer = ({}) => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -31,5 +31,13 @@ export const ItemListContainer = ({ }) => {
 
   //FETCH ES UNA PROMESA    
 
-  return loading ? <h2>Cargando...</h2> : <ItemList productos={productos} />;
+  return loading ? (
+    <h2>Cargando...</h2>
+  ) : (
+    <div className="flex flex-row flex-wrap justify-center">
+      <ItemList productos={productos} />
+    </div>
+  );
+      
+  
 };
