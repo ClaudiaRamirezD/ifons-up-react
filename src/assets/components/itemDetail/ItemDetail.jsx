@@ -31,17 +31,17 @@ const ItemDetail = ({ producto }) => {
     setCart(!cart);
   };
   return (
-    <div className="card max-w-md text-center mx-auto">
+    <div className="card max-w-md text-center mx-auto my-12">
       <div className="card-header">
         <h2 className="card-title"> {producto.name} </h2>
       </div>
-      <div className="card-body mx-auto">
+      <div className="card-body mx-auto mb-4">
         <img
           src= {producto.foto}
           alt= {producto.name}
-          className="max-w-44 max-h-60 "
+          className="max-w-44 max-h-60 mx-auto mt-6 "
         ></img>
-        <p className="card-text">
+        <p className="card-text mt-7">
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </p>

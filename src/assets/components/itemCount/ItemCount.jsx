@@ -19,12 +19,12 @@ const ItemCoutn = ({ initial = 1, stock = 10, onAdd }) => {
   };
 
   return (
-    <div className="card w-50 mt-5 text-center mx-auto">
+    <div className="card w-50 text-center mx-auto">
       <div className="row">
         <div className="col">
-          <button className="btn btn-outline-primary w-100" onClick={handleSuma}>
+          <button className="btn btn-outline-primary w-100"  onClick={handleRestar}>
             {" "}
-            +{" "}
+            - {" "}
           </button>
         </div>
         <div className="col">
@@ -33,9 +33,8 @@ const ItemCoutn = ({ initial = 1, stock = 10, onAdd }) => {
           </center>
         </div>
         <div className="col">
-          <button className="btn btn-outline-primary w-100" onClick={handleRestar}>
-            {" "}
-            -{" "}
+          <button className="btn btn-outline-primary w-100" onClick={handleSuma}>
+            {" "} + {" "}
           </button>
         </div>
       </div>
