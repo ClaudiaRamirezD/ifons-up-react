@@ -15,7 +15,12 @@ useEffect(() => {
 }, []);
 
 
-  return  <ItemDetail producto={producto} />;
+  return (
+    <>
+      {producto ? <ItemDetail producto={producto}/> :
+      <h1>Cargando...</h1>}
+    </>
+  )
 };
 
 console.log('llegue aqui')

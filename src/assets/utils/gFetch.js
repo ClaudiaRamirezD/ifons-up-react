@@ -297,7 +297,7 @@ let productos = [
     export const gFetchOne = (id) => {
       return new Promise((res, rej) => {
         setTimeout(() => {
-          res(productos.find((producto) => producto.id === id));
+          res(productos.find((producto) => producto.id === parseInt(id)));
         }, 1000);
       });
     }; 
