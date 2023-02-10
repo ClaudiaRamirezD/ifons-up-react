@@ -283,27 +283,22 @@ let productos = [
   }
 ];
 
-export const gFetch = (id) => {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res(id ? productos.find((producto) => producto.id === id) : productos);
-    }, 1000);
-  });
-}; 
+    export const gFetch = (id) => {
+      return new Promise((res, rej) => {
+        setTimeout(() => {
+          res(
+            id ? productos.find((producto) => producto.id === id) : productos
+          );
+        }, 1000);
+      });
+    };
 
 
-export const gFetchOne = (id) => {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res (productos.find(producto => producto.id === id))
-    },1000)
-  })
-}
+    export const gFetchOne = (id) => {
+      return new Promise((res, rej) => {
+        setTimeout(() => {
+          res(productos.find((producto) => producto.id === id));
+        }, 1000);
+      });
+    }; 
 
-export const gFetchDetail = (id) => {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res( productos.find(producto => producto.id === id))
-    },1000)
-  })
-}

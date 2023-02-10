@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { gFetch } from "@/assets/utils/gFetch.js";
 import ItemList from "@/assets/components/ItemList/ItemList.jsx";
 
-export const ItemListContainer = ({}) => {
-  const [productos, setProductos] = useState([]);
+export const ItemListContainer = ({greeting}) => {
+  const [productos, setProductos] = useState();
   const [loading, setLoading] = useState(true);
 
   const { idCategoria } = useParams()
@@ -13,7 +13,7 @@ export const ItemListContainer = ({}) => {
     if (idCategoria) {
       gFetch()
         .then((res) => {
-          setProductos(res.filter(producto => producto.categoria ===idCategoria));
+          setProductos(res.filter(producto => producto.categoria === idCategoria));
           //cada then debe de hacer 1 sola cosa
         })
         .catch((error) => console.log(error))
@@ -31,12 +31,13 @@ export const ItemListContainer = ({}) => {
 
   //FETCH ES UNA PROMESA    
 
-  return loading ? (
-    <h2>Cargando...</h2>
-  ) : (
-    <div className="flex flex-row flex-wrap justify-center">
-      <ItemList productos={productos} />
-    </div>
+  return(
+      <>
+        {productos ?
+         ( <div className="flex flex-row flex-wrap      justify-center"><ItemList productos={productos} />
+        </div>) : <h2>Cargando...</h2>
+         }
+    </> 
   );
       
   

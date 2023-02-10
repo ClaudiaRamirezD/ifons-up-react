@@ -12,6 +12,7 @@ const Componente = () => {
 };
 
 const ItemDetail = ({ producto }) => {
+  console.log("ItemDetail: ",producto)
   //onAdd
   const [isCount, setIsCount] = useState(true);
   const [cart, setCart] = useState(false);
