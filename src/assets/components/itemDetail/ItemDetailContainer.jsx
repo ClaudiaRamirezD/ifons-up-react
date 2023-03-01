@@ -25,3 +25,4 @@ useEffect(() => {
 
 console.log('llegue aqui')
 export default ItemDetailContainer;
+

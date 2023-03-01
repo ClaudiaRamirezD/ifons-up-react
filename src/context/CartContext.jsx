@@ -10,9 +10,12 @@ export const CartContextProvider = ({ children }) => {
 
   // isInCart
 
-  const agregarCarrito = (newProducto) => {
-    // VAlidar si está el producto
-    setCartList([...cartList, newProducto]);
+  const addCart = (newProducto) => {
+    // Validar si está el producto
+    setCartList([
+      ...cartList,
+      newProducto
+    ]);
   };
 
   // cantidad total
@@ -20,14 +23,14 @@ export const CartContextProvider = ({ children }) => {
 
   // eliminar item por id
 
-  const vaciarCarrito = () => setCartList([]);
+  const emptyCart = () => setCartList([]);
 
   return (
     <CartContext.Provider
       value={{
         cartList,
-        agregarCarrito,
-        vaciarCarrito,
+        addCart,
+        emptyCart,
       }}
     >
       {children}
@@ -35,4 +38,4 @@ export const CartContextProvider = ({ children }) => {
   );
 };
 
-export default CartContext
+export default CartContext;

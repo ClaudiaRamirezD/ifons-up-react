@@ -13,7 +13,7 @@ const Navbar = () => {
    
   const handleOpenMenu = () => {
     setNavClass(
-      "absolute top-28 left-0 sm:mt-16 flex h-full flex-col gap-y-8  md:bg-transparent z-10 p-12 pt-12 font-bold md:flex md:flex-row md:gap-8 md:static"
+      "absolute top-28 left-0 sm:mt-16 flex h-full flex-col gap-y-8 z-10  md:bg-transparent z-10 p-12 pt-12 font-bold md:flex md:flex-row md:gap-8 md:static"
     );
   };
   
@@ -38,7 +38,7 @@ const Navbar = () => {
           <ul className={navClass}>
             <li>
               <button className="close md:hidden" onClick={handleCloseMenu}>
-                <AiOutlineClose className="close" />
+                <AiOutlineClose className="close text-purple-700 font-bold " />
               </button>
             </li>
             <li>

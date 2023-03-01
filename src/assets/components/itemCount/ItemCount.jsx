@@ -1,14 +1,14 @@
 import { useState } from "react";
 
-const ItemCoutn = ({ initial = 1, stock = 10, onAdd }) => {
+const ItemCount = ({ initial = 1, stock = 10, onAdd }) => {
   const [count, setCount] = useState(initial);
 
-  const handleSuma = () => {
+  const handleAdd = () => {
     if (count < stock) {
       setCount(count + 1);
     }
   };
-  const handleRestar = () => {
+  const handleRemove = () => {
     if (count > initial) {
       setCount(count - 1);
     }
@@ -19,12 +19,15 @@ const ItemCoutn = ({ initial = 1, stock = 10, onAdd }) => {
   };
 
   return (
-    <div className="card w-50 text-center mx-auto">
-      <div className="row">
-        <div className="col">
-          <button className="btn btn-outline-primary w-100"  onClick={handleRestar}>
+    <div className="card w-50 mx-auto  border-transparent  text-center ">
+      <div className="row items-center">
+        <div className="col  border-blue-500">
+          <button
+            className="btn btn-outline-primary text-lg font-bold"
+            onClick={handleRemove}
+          >
             {" "}
-            - {" "}
+            -{" "}
           </button>
         </div>
         <div className="col">
@@ -33,13 +36,20 @@ const ItemCoutn = ({ initial = 1, stock = 10, onAdd }) => {
           </center>
         </div>
         <div className="col">
-          <button className="btn btn-outline-primary w-100" onClick={handleSuma}>
-            {" "} + {" "}
+          <button
+            className="btn btn-outline-primary text-lg font-bold"
+            onClick={handleAdd}
+          >
+            {" "}
+            +{" "}
           </button>
         </div>
       </div>
-      <div className="card-footer">
-        <button className="btn btn-outline-primary w-100" onClick={handleOnAdd}>
+      <div className="card-footer border-transparent p-2 ">
+        <button
+          className="btn btn-outline-primary w-full"
+          onClick={handleOnAdd}
+        >
           Agregar al carrito
         </button>
       </div>
@@ -47,4 +57,4 @@ const ItemCoutn = ({ initial = 1, stock = 10, onAdd }) => {
   );
 };
 
-export default ItemCoutn;
+export default ItemCount;

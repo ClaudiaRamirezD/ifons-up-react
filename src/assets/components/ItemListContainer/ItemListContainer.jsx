@@ -3,6 +3,16 @@ import { useParams } from "react-router-dom";
 import { gFetch } from "@/assets/utils/gFetch.js";
 import ItemList from "@/assets/components/ItemList/ItemList.jsx";
 
+const Loading = () => {
+
+  useEffect(() => {
+    return () => {
+      console.log('Dismounting Loading...')
+    }
+  })
+  return <h2>Cargando...</h2>
+}
+
 export const ItemListContainer = ({greeting}) => {
   const [productos, setProductos] = useState();
   const [loading, setLoading] = useState(true);
@@ -35,7 +45,7 @@ export const ItemListContainer = ({greeting}) => {
       <>
         {productos ?
          ( <div className="flex flex-row flex-wrap      justify-center"><ItemList productos={productos} />
-        </div>) : <h2>Cargando...</h2>
+        </div>) : <Loading />
          }
     </> 
   );

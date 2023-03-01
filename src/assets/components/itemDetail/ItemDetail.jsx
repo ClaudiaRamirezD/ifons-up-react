@@ -17,12 +17,12 @@ const ItemDetail = ({ producto }) => {
   const [isCount, setIsCount] = useState(true);
   const [cart, setCart] = useState(false);
 
-  const { agregarCarrito } = useCartContext();
+  const { addCart } = useCartContext();
 
   const onAdd = (cant) => {
     console.log(cant);
     // agragar al carrito
-    agregarCarrito({ ...producto, cantidad: cant });
+    addCart({ ...producto, cantidad: cant });
     setIsCount(false);
   };
 
@@ -31,35 +31,36 @@ const ItemDetail = ({ producto }) => {
     setCart(!cart);
   };
   return (
-    <div className="card max-w-md text-center mx-auto my-12">
-      <div className="card-header">
-        <h2 className="card-title"> {producto.name} </h2>
+    <div className="card mx-auto my-12 max-w-md border-blue-500 text-center">
+      <div className="card-header bg-blue-500">
+        <h2 className="card-title text-white font-bold"> {producto.name} </h2>
       </div>
       <div className="card-body mx-auto mb-4">
         <img
-          src= {producto.foto}
-          alt= {producto.name}
-          className="max-w-44 max-h-60 mx-auto mt-6 "
+          src={producto.foto}
+          alt={producto.name}
+          className="max-w-44 mx-auto mt-6 max-h-60 "
         ></img>
         <p className="card-text mt-7">
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </p>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item">Precio ${producto.price}mxn</li>
-          <li className="list-group-item">A second item</li>
-          <li className="list-group-item">A third item</li>
+        <ul className="border-blue-500 list-group list-group-flush ">
+          <li className="list-group-item border-blue-500">Precio ${producto.price}mxn</li>
+          <li className="list-group-item border-blue-500">A second item</li>
+          <li className="list-group-item border-blue-500">A third item</li>
         </ul>
-        <button onClick={handleCart}></button>
+        <button
+          onClick={handleCart}></button>
         {isCount ? (
           <ItemCount initial={1} stock={30} onAdd={onAdd} />
         ) : (
           <>
             <Link className="btn btn-outline-success" to="/cart">
-              Ir a Cart
+              Ir a Carrito
             </Link>
-            <Link className="btn btn-outline-primary" to="/">
-              Ir a Home
+            <Link className="btn btn-outline-primary ml-2" to="/">
+              Ir a Inicio
             </Link>
           </>
         )}
