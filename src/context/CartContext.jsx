@@ -37,7 +37,7 @@ export const CartContextProvider = ({ children }) => {
       0
     );
   
-  //Cantidad Total
+  //Cantidad Productos
    const cantidadTotal = () =>
      cartList.reduce((count, product) => (count += product.cantidad), 0);
 

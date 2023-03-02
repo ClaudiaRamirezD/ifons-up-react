@@ -3,11 +3,12 @@ import { AiOutlineMenu, AiOutlineClose, AiOutlineShoppingCart } from "react-icon
 import Logo from '@/assets/images/cortado.png';
 import './navbar.css';
 import { NavLink } from "react-router-dom";
+import { useCartContext } from "@/context/CartContext";
 // import { useCartContext } from "@/context/CartContext";
 
 const Navbar = () => {
 
-  // const { countTotalProd } = useContext(useCartContext);
+  const { cantidadTotal } = useCartContext();
 
   const [navClass, setNavClass] = useState(
     "hidden font-bold md:static  md:flex md:h-auto md:flex-row md:gap-4 md:p-0"
@@ -102,7 +103,7 @@ const Navbar = () => {
           >
             <AiOutlineShoppingCart className=" relative text-2xl " />
             <span className="absolute top-8 right-4 rounded-full bg-purple-700 px-1 text-sm font-bold text-blue-400">
-             3
+             {cantidadTotal()}
             </span>
           </NavLink>
         </div>
