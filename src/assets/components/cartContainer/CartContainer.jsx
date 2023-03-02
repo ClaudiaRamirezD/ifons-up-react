@@ -4,10 +4,10 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
 const CartContainer = () => {
-  const { cartList, deleteCartProduct } = useCartContext()
+  const { cartList, deleteCartProduct, cartTotal, cantidadTotal} = useCartContext()
  
   return (
-    <div className="card  align-center max-w-3/4 mx-auto  my-4 flex place-content-center items-center text-center md:w-2/6 ">
+    <div className="card border-blue-500 align-center max-w-3/4 mx-auto  my-4 flex place-content-center items-center text-center md:w-2/6 ">
       <h4 className="card-header mb-4 w-full bg-blue-500 font-bold text-white ">
         Carrito de Compras
       </h4>
@@ -51,7 +51,10 @@ const CartContainer = () => {
       ))}
       {cartList.length !== 0 && (
         <div>
-          <div className="align-center mb-2 flex items-center gap-8">
+          <p className='font-bold text-xl mb-2'>{cartTotal() !== 0 && `Total Carrito: $${cartTotal()}mxn`}</p>
+          <p className='font-bold text-xl mb-2'>{cartTotal() !== 0 && `Productos: ${cantidadTotal()}`}</p>
+          
+          <div className="align-center mb-2 flex justify-center gap-8">
             <Link className=" hover:text-blue-500" to="/">
               Volver a Inicio
             </Link>
