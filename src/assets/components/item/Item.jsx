@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Item = ({producto}) => {
   return (
     <div className="card m-10 w-64 border-blue-500 text-center">
-      <Link to={`/detalle/${producto.id}`}>
+      <Link to={`/producto/${producto.id}`}>
         <div key={producto.id}>
           <div className="card-header bg-blue-500">
             <h2 className="card-title font-bold text-white hover:text-purple-700 ">{producto.name}</h2>
@@ -26,4 +26,4 @@ const Item = ({producto}) => {
   );
 }
 
-export default Item
+export default Item;

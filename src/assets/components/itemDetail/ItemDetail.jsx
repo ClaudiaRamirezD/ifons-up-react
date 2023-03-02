@@ -20,7 +20,7 @@ const ItemDetail = ({ producto }) => {
   const { addCart } = useCartContext();
 
   const onAdd = (cant) => {
-    console.log(cant);
+    console.log('Item Detail-onAdd:', cant);
     // agragar al carrito
     addCart({ ...producto, cantidad: cant });
     setIsCount(false);

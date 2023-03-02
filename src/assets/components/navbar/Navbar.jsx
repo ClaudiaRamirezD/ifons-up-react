@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import CartWidget from "../CartWidget/CartWidget";
+import { AiOutlineMenu, AiOutlineClose, AiOutlineShoppingCart } from "react-icons/ai";
 import Logo from '@/assets/images/cortado.png';
 import './navbar.css';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+// import { useCartContext } from "@/context/CartContext";
 
 const Navbar = () => {
+
+  // const { countTotalProd } = useContext(useCartContext);
 
   const [navClass, setNavClass] = useState(
     "hidden font-bold md:static  md:flex md:h-auto md:flex-row md:gap-4 md:p-0"
@@ -13,7 +15,7 @@ const Navbar = () => {
    
   const handleOpenMenu = () => {
     setNavClass(
-      "absolute top-28 left-0 sm:mt-16 flex h-full flex-col gap-y-8 z-10  md:bg-transparent z-10 p-12 pt-12 font-bold md:flex md:flex-row md:gap-8 md:static"
+      "absolute top-28 left-0 sm:mt-16 flex h-full flex-col gap-y-8 z-10 bg-white  md:bg-transparent z-10 p-12 pt-12 font-bold md:flex md:flex-row md:gap-8 md:static"
     );
   };
   
@@ -38,7 +40,7 @@ const Navbar = () => {
           <ul className={navClass}>
             <li>
               <button className="close md:hidden" onClick={handleCloseMenu}>
-                <AiOutlineClose className="close text-purple-700 font-bold " />
+                <AiOutlineClose className="close font-bold text-purple-700 " />
               </button>
             </li>
             <li>
@@ -98,7 +100,10 @@ const Navbar = () => {
               isActive ? "text-purple-700" : "text-blue-500"
             }
           >
-            <CartWidget/>
+            <AiOutlineShoppingCart className=" relative text-2xl " />
+            <span className="absolute top-8 right-4 rounded-full bg-purple-700 px-1 text-sm font-bold text-blue-400">
+             3
+            </span>
           </NavLink>
         </div>
       </nav>
