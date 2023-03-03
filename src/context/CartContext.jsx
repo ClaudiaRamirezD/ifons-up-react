@@ -41,6 +41,9 @@ export const CartContextProvider = ({ children }) => {
    const cantidadTotal = () =>
      cartList.reduce((count, product) => (count += product.cantidad), 0);
 
+  //Eliminar TODO el carrito
+  const emptyCart = () => setCartList([])
+  
   return (
     <CartContext.Provider
       value={{
@@ -49,6 +52,7 @@ export const CartContextProvider = ({ children }) => {
         deleteCartProduct,
         cartTotal,
         cantidadTotal,
+        emptyCart
       }}
     >
       {children}
