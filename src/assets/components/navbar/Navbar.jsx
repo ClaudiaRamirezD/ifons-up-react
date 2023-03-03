@@ -1,31 +1,32 @@
 import { useState } from "react";
-import { AiOutlineMenu, AiOutlineClose, AiOutlineShoppingCart } from "react-icons/ai";
-import Logo from '@/assets/images/cortado.png';
-import './navbar.css';
+import {
+  AiOutlineMenu,
+  AiOutlineClose,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { useCartContext } from "@/context/CartContext";
-// import { useCartContext } from "@/context/CartContext";
+import Logo from "@/assets/images/cortado.png";
+import "./navbar.css";
 
 const Navbar = () => {
-
-  const { cantidadTotal } = useCartContext();
+  const { totalQuantity } = useCartContext();
 
   const [navClass, setNavClass] = useState(
     "hidden font-bold md:static  md:flex md:h-auto md:flex-row md:gap-4 md:p-0"
   );
-   
+
   const handleOpenMenu = () => {
     setNavClass(
       "absolute top-28 left-0 sm:mt-16 flex h-full flex-col gap-y-8 z-10 bg-white  md:bg-transparent z-10 p-12 pt-12 font-bold md:flex md:flex-row md:gap-8 md:static"
     );
   };
-  
+
   const handleCloseMenu = () => {
     setNavClass(
       "hidden font-bold md:static  md:flex  md:h-auto  md:gap-4 md:p-0 "
     );
   };
-
 
   return (
     <>
@@ -46,7 +47,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/categoria/iphone"
+                to="/category/iphone"
                 className={({ isActive }) =>
                   isActive ? "text-purple-700" : "text-blue-500"
                 }
@@ -56,7 +57,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/categoria/Samsung"
+                to="/category/Samsung"
                 className={({ isActive }) =>
                   isActive ? "text-purple-700" : "text-blue-500"
                 }
@@ -66,7 +67,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/categoria/Huawei"
+                to="/category/Huawei"
                 className={({ isActive }) =>
                   isActive ? "text-purple-700" : "text-blue-500"
                 }
@@ -76,7 +77,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/categoria/Motorola"
+                to="/category/Motorola"
                 className={({ isActive }) =>
                   isActive ? "text-purple-700" : "text-blue-500"
                 }
@@ -86,7 +87,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/categoria/Otros"
+                to="/category/Otros"
                 className={({ isActive }) =>
                   isActive ? "text-purple-700" : "text-blue-500"
                 }
@@ -103,7 +104,7 @@ const Navbar = () => {
           >
             <AiOutlineShoppingCart className=" relative text-2xl " />
             <span className="absolute top-8 right-4 rounded-full bg-purple-700 px-1 text-sm font-bold text-blue-400">
-             {cantidadTotal()}
+              {totalQuantity()}
             </span>
           </NavLink>
         </div>
