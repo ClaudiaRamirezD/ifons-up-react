@@ -11,6 +11,8 @@ const CartContainer = () => {
     email: "",
     repetirEmail: "",
   });
+
+  const [isId, setIsId] = useState('')
   const { cartList, deleteCartProduct, cartTotal, totalQuantity, emptyCart } =
     useCartContext();
 
@@ -28,7 +30,19 @@ const CartContainer = () => {
     const ordersCollection = collection(db, "orders");
 
     //add in firestore
-    addDoc(ordersCollection, order).then((resp) => console.log(resp));
+    addDoc(ordersCollection, order)
+      .then((resp) => setIsId(resp.id))
+      .catch (err=> console.log(err))
+      .finally(() => {
+        emptyCart()
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          repetirEmail: ''
+        })
+       
+     })
   };
 
   const handleOnChange = (e) => {
@@ -49,10 +63,11 @@ const CartContainer = () => {
       {cartList.length === 0 && (
         <p className="text-center text-2xl">Tu carrito está vacío! 😓</p>
       )}
+      {isId !== '' && < h3 > {isId} </h3>}
       {cartList.map((product) => (
         <div
           key={product.id}
-          className="w-full rounded-md border-blue-500 text-center"
+          className="w-full grid  rounded-md border-blue-500 text-center"
         >
           <div className="mb-4 items-center justify-evenly md:flex">
             <img
@@ -136,7 +151,7 @@ const CartContainer = () => {
               className=" mb-4 rounded-lg bg-blue-500 py-2 px-4 font-bold text-white hover:bg-green-700 "
               type="submit"
             >
-              Pagar ahora
+              Ordena ya!
             </button>
             <button
               onClick={emptyCart}
