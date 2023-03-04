@@ -1,11 +1,10 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
-const CodedProducts = async () => {
+const codedProducts = async () => {
   const db = getFirestore();
   const productsCollection = collection(db, "Productos");
   const products = [
     {
-      id: 1,
       category: "iphone",
       name: "iPhone 11 Pro Max",
       price: 9000,
@@ -13,7 +12,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 2,
       category: "iphone",
       name: "iPhone 11 Pro",
       price: 8700,
@@ -21,7 +19,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 3,
       category: "iphone",
       name: "iPhone 11",
       price: 7000,
@@ -29,7 +26,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 4,
       category: "iphone",
       name: "iPhone 12 Pro Max 5G",
       price: 12000,
@@ -37,7 +33,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 5,
       category: "iphone",
       name: "iPhone 12 Pro Max",
       price: 17000,
@@ -45,7 +40,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 6,
       category: "iphone",
       name: "iPhone 13 Pro Max",
       price: 20000,
@@ -53,7 +47,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 7,
       category: "iphone",
       name: "iPhone 13 Pro",
       price: 19700,
@@ -61,7 +54,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 8,
       category: "iphone",
       name: "iPhone 13",
       price: 17500,
@@ -69,7 +61,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 9,
       category: "iphone",
       name: "iPhone 14",
       price: 20000,
@@ -77,7 +68,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 10,
       category: "iphone",
       name: "iPhone XR",
       price: 6000,
@@ -85,7 +75,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 11,
       category: "Samsung",
       name: "A32",
       price: 3800,
@@ -93,7 +82,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 12,
       category: "Samsung",
       name: "Note 10 Plus",
       price: 8000,
@@ -101,7 +89,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 13,
       category: "Samsung",
       name: "Note 20 Ultra",
       price: 13200,
@@ -109,7 +96,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 14,
       category: "Samsung",
       name: "Note 20",
       price: 8300,
@@ -117,7 +103,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 15,
       category: "Samsung",
       name: "S10 plus",
       price: 6500,
@@ -125,7 +110,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 16,
       category: "Samsung",
       name: "S10E",
       price: 4000,
@@ -133,7 +117,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 17,
       category: "Samsung",
       name: "S20 FE",
       price: 4300,
@@ -141,7 +124,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 18,
       category: "Samsung",
       name: "S20 Plus",
       price: 7400,
@@ -149,7 +131,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 19,
       category: "Samsung",
       name: "S22 Plus",
       price: 12200,
@@ -157,7 +138,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 20,
       category: "Samsung",
       name: "S22 Ultra",
       price: 23800,
@@ -165,7 +145,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 21,
       category: "Samsung",
       name: "Z Flip 4",
       price: 18700,
@@ -173,7 +152,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 22,
       category: "Samsung",
       name: "Z Fold 2",
       price: 17600,
@@ -181,7 +159,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 23,
       category: "Samsung",
       name: "Z Fold 3",
       price: 21600,
@@ -189,7 +166,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 24,
       category: "Huawei",
       name: "Y9 Prime",
       price: 3000,
@@ -197,7 +173,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 25,
       category: "Huawei",
       name: "P30 Lite",
       price: 3000,
@@ -205,7 +180,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 26,
       category: "Huawei",
       name: "Nova 5T",
       price: 3900,
@@ -213,7 +187,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 27,
       category: "Huawei",
       name: "Honor X7",
       price: 3800,
@@ -221,7 +194,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 28,
       category: "Motorola",
       name: "Edge 20 Pro",
       price: 8300,
@@ -229,7 +201,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 29,
       category: "Motorola",
       name: "G9 Plus",
       price: 3200,
@@ -237,7 +208,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 30,
       category: "Motorola",
       name: "G31",
       price: 2900,
@@ -245,7 +215,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 31,
       category: "Motorola",
       name: "G50",
       price: 3100,
@@ -253,7 +222,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 32,
       category: "Motorola",
       name: "G60",
       price: 3200,
@@ -261,7 +229,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 33,
       category: "Motorola",
       name: "G60s",
       price: 3700,
@@ -269,7 +236,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 34,
       category: "Otros",
       name: "Google Pixel 6Pro",
       price: 6200,
@@ -277,7 +243,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 35,
       category: "Otros",
       name: "One Plus 7T McLaren",
       price: 6600,
@@ -285,7 +250,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 36,
       category: "Otros",
       name: "One Plus 8T",
       price: 8600,
@@ -293,7 +257,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 37,
       category: "Otros",
       name: "Sony 5 III",
       price: 9000,
@@ -301,7 +264,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 38,
       category: "Otros",
       name: "Xiaomi Mi Note 10",
       price: 5000,
@@ -309,7 +271,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 39,
       category: "Otros",
       name: "Xiaomi Redmi Note 11",
       price: 3900,
@@ -317,7 +278,6 @@ const CodedProducts = async () => {
       stock: 9,
     },
     {
-      id: 40,
       category: "Otros",
       name: "Xiaomi Redmi 10",
       price: 3300,
@@ -325,14 +285,41 @@ const CodedProducts = async () => {
       stock: 9,
     },
   ];
+  // MI CODIGO///////////////
   for (const product of products) {
     try {
       await addDoc(productsCollection, product);
-      console.log(`Added product with id ${product.id} to Firestore`);
+      console.log(`Added product with product.id} to Firestore`);
     } catch (e) {
-      console.error(`Error adding product with id ${product.id}: ${e}`);
+      console.error(`Error adding product with product.id}: ${e}`);
     }
   }
 };
 
-export default CodedProducts;
+codedProducts();
+
+
+
+
+  /////CODER ASK CODE////////////////
+  // try {
+  //   for (const product of products) {
+  //     await addDoc(productsCollection, product);
+  //     console.log(`Agregado el producto "${product.name}" a la colección.`);
+  //   }
+  //   console.log("Todos los productos han sido agregados a la colección.");
+  // } catch (error) {
+  //   console.error("Error al agregar productos a la colección:", error);
+  // }
+// MI CODIGO///////////////
+  // for (const product of products) {
+  //   try {
+  //     await addDoc(productsCollection, product);
+  //     console.log(`Added product with product.id} to Firestore`);
+  //   } catch (e) {
+  //     console.error(`Error adding product with product.id}: ${e}`);
+  //   }
+  // }
+
+
+export default codedProducts;
