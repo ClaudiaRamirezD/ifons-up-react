@@ -11,9 +11,7 @@ import ItemList from "@/assets/components/ItemList/ItemList.jsx";
 
 const Loading = () => {
   useEffect(() => {
-    return () => {
-      console.log("Dismounting Loading...");
-    };
+
   });
   return <h2>Cargando...</h2>;
 };

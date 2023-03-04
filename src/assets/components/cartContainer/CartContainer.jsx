@@ -46,9 +46,7 @@ const CartContainer = () => {
   };
 
   const handleOnChange = (e) => {
-    console.log(e.target.name);
-    console.log(e.target.value);
-
+   
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -63,17 +61,21 @@ const CartContainer = () => {
       {cartList.length === 0 && (
         <p className="text-center text-2xl">Tu carrito está vacío! 😓</p>
       )}
-      {isId !== '' && < h3 > {isId} </h3>}
+      {isId !== "" && (
+        <h3 className="my-4 text-2xl font-bold text-blue-600">
+          Tienes una orden generada con el id: {isId}{" "}
+        </h3>
+      )}
       {cartList.map((product) => (
         <div
           key={product.id}
-          className="w-full grid  rounded-md border-blue-500 text-center"
+          className="grid w-full  rounded-md border-blue-500 text-center"
         >
           <div className="mb-4 items-center justify-evenly md:flex">
             <img
               src={product.picture}
               alt={product.name}
-              className="mb-4 w-32 object-cover sm:mx-auto md:mx-0"
+              className="mb-4 w-32 object-cover mx-0  md:mx-0"
             ></img>
             <div className="flex flex-col justify-center gap-2">
               <h3 className="font-bold">{product.name}</h3>

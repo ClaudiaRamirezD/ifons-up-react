@@ -13,7 +13,7 @@ const Component = () => {
 };
 
 const ItemDetail = ({ product }) => {
-  console.log("ItemDetail: ", product);
+  
   //onAdd
   const [isCount, setIsCount] = useState(true);
   const [cart, setCart] = useState(false);
@@ -21,7 +21,6 @@ const ItemDetail = ({ product }) => {
   const { addCart } = useCartContext();
 
   const onAdd = (qty) => {
-    console.log("Item Detail-onAdd:", qty);
     // agragar al carrito
     addCart({ ...product, quantity: qty });
     setIsCount(false);
