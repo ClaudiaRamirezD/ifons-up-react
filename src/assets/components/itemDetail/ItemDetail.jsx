@@ -46,11 +46,9 @@ const ItemDetail = ({ product }) => {
           bulk of the card's content.
         </p>
         <ul className="list-group list-group-flush border-blue-500 ">
-          <li className="list-group-item border-blue-500">
+          <li className="list-group-item border-blue-500 font-bold">
             Precio ${product.price}mxn
           </li>
-          <li className="list-group-item border-blue-500">A second item</li>
-          <li className="list-group-item border-blue-500">A third item</li>
         </ul>
         <button onClick={handleCart}></button>
         {isCount ? (
