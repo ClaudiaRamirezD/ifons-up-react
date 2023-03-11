@@ -101,7 +101,7 @@ const CartContainer = () => {
             <img
               src={product.picture}
               alt={product.name}
-              className="mb-4 w-32 object-cover max-sm:mx-auto md:mx-0"
+              className="mb-4 w-48 object-cover max-sm:mx-auto md:mx-0"
             ></img>
             <div className="flex flex-col justify-center gap-2">
               <h3 className="font-bold">{product.name}</h3>
