@@ -13,18 +13,43 @@ const CartContainer = () => {
   });
 
   const [isId, setIsId] = useState('')
+  const [error, setError] = useState({
+    name: false,
+    phone: false,
+    email: false,
+    repetirEmail: false,
+  });
+    
   const { cartList, deleteCartProduct, cartTotal, totalQuantity, emptyCart } =
     useCartContext();
 
   const addOrder = (e) => {
     e.preventDefault();
+    const formErrors = {};
+    if (!formData.name) {
+      formErrors.name = true;
+    }
+    if (!formData.phone) {
+      formErrors.phone = true;
+    }
+    if (!formData.email) {
+      formErrors.email = true;
+    }
+    if (!formData.repetirEmail) {
+      formErrors.repetirEmail = true;
+    }
+
+    setError(formErrors);
+    if (Object.keys(formErrors).length > 0) {
+      return;
+    }
+    
     const order = {};
-    // Se debe validar formData
     order.buyer = formData;
     order.items = cartList.map(({ id, name, price }) => ({ id, name, price }));
     order.total = 6933;
 
-    //Se debe insertar a firestore
+    // insertar a firestore
 
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
@@ -53,6 +78,7 @@ const CartContainer = () => {
     });
   };
 
+
   return (
     <div className="card align-center max-w-3/4 mx-auto my-4  flex place-content-center items-center border-blue-500 text-center md:w-4/6 ">
       <h4 className="card-header mb-4 w-full bg-blue-500 font-bold text-white ">
@@ -75,7 +101,7 @@ const CartContainer = () => {
             <img
               src={product.picture}
               alt={product.name}
-              className="mb-4 w-32 object-cover mx-0  md:mx-0"
+              className="mb-4 w-32 object-cover max-sm:mx-auto md:mx-0"
             ></img>
             <div className="flex flex-col justify-center gap-2">
               <h3 className="font-bold">{product.name}</h3>
@@ -109,6 +135,13 @@ const CartContainer = () => {
               Volver a Inicio
             </Link>
           </div>
+          {
+            error && (
+              <p className="text-red-500 text-sm mb-2">
+                Por favor complete todos los campos!
+              </p>
+            )
+        }
           <form onSubmit={addOrder} className="mb-3 text-center">
             <input
               type="text"
@@ -147,11 +180,18 @@ const CartContainer = () => {
             />
             <br />
           </form>
+
           <div className="flex gap-3">
             <button
               onClick={addOrder}
               className=" mb-4 rounded-lg bg-blue-500 py-2 px-4 font-bold text-white hover:bg-green-700 "
               type="submit"
+              disabled={
+                !formData.name ||
+                !formData.phone ||
+                !formData.email ||
+                !formData.repetirEmail
+              }
             >
               Ordena ya!
             </button>

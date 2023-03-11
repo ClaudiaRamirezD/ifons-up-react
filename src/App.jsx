@@ -2,10 +2,11 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { CartContextProvider } from "@/context/CartContext";
 import { ItemListContainer } from "@/assets/components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "@/assets/components/itemDetail/ItemDetailContainer";
-import CartContainer from "@/assets/components/cartContainer/CartContainer";
 // import codedProducts from "./assets/utils/codedProducts";
 import Navbar from "@/assets/components/navbar/Navbar";
 import "@/App.css";
+import CartContainer from "./assets/components/cartContainer/CartContainer";
+
 
 function App() {
   return (
