@@ -1,18 +1,18 @@
-# iFonsUp
+# iFonsUp 📱🤳
 <p align="center" ><img width="100%" src='https://github.com/ClaudiaRamirezD/ifons-up-react/blob/main/public/screenshots/landing.png?raw=true' alt="landing page ifonsup"></p>
 </br>
 
-## Preview
+## Preview 🔍
 - [Preview app](https://ecommerce-ifonesup.netlify.app/)
 </br>
 
-## About Project
+## About Project 📖
 *Final project for Coderhouse´s React course.
 *Done by knowledge adquired by Coderhouse teacher and self investigation.
 *First time using Tailwind 
 </br>
 
-## Quick start
+## Quick start 🤓
 1. Clone repository: 
     https://github.com/ClaudiaRamirezD/ifons-up-react.git
 2. Acces to cd ./iFonesUp 
@@ -21,20 +21,20 @@
 4. Start the app:
     npm start
     
-## Compile dist files
+## Compile dist files 🗃️
 *To compile the dist files you need Node.js/npm, clone/download the repo then:
 
 1. npm install (install npm deps)
 2. Optional: npm run dev (developer mode, autocompile with browsersync support for live demo)
 3. npm run production (compile css/js files)
 
-## Overlook project
+## Overlook project 👀
 <p align="center" ><img width="100%" src="https://github.com/ClaudiaRamirezD/ifons-up-react/blob/main/public/screenshots/detalles.png?raw=true" alt="screenshot of product details"></p>
 </br>
 <p align="center" ><img width="100%" src="https://github.com/ClaudiaRamirezD/ifons-up-react/blob/main/public/screenshots/carrito.png?raw=true" alt="screenshot of cart"></p>
 </br>
 
-## Dependecies
+## Dependecies 🗄️
 *react: 18.2.0 - Open source JavaScript library for building user interfaces (UI) in web applications based on components.
 React was the main topic of this project because it is the course im studying.
 
@@ -53,7 +53,7 @@ It was used for the first time to try something different than bootsrap.
 *firebase: 9.17.1 - Firebase is a set of hosting services for any type of application. It offers NoSQL and real-time hosting of databases, content, social authentication, and notifications, or services, such as a real-time communication server.
 Was used to upload the products to the web and then to retrieve them and store the customer´s order.
 
-## Hope you like it, feedback is highly appreciated!
+## Hope you liked it, feedback is highly appreciated! 🙃
 Contact: clau8812@gmail.com
 
 
